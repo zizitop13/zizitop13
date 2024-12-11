@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @zizitop13
 - 👀 I’m interested in java development and DevOps
-- 🌱 I’m currently learning graphql
+- 🌱 I’m currently learning React
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
