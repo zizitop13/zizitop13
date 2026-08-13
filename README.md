@@ -1,8 +1,13 @@
-- 👋 Hi, I’m @zizitop13
-- 👀 I’m interested in java development and DevOps
-- 🌱 I’m currently learning React
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+### Hi, I’m Maksim 👋
+
+I’m a software engineer specializing in Java, Kotlin, JavaScript, and distributed backend systems. I’m particularly interested in concurrency, system design, cloud infrastructure, and developer tooling.
+
+* 💼 Building high-performance financial systems
+* ⚙️ Designing scalable systems and leading teams that deliver reliable software
+* 🚀 Creator of [Helios Gateway](https://github.com/zizitop13/helios-gateway), an open-source GraphQL Federation gateway
+* 🤝 Open to collaborating on ambitious open-source projects
+* 📫 Connect with me on [LinkedIn](https://www.linkedin.com/in/maksim-ziniakov-6005a124b)
+
 
 <!---
 zizitop13/zizitop13 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
