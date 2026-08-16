@@ -14,19 +14,6 @@ zizitop13/zizitop13 is a ✨ special ✨ repository because its `README.md` (thi
 You can click the Preview link to take a look at your changes.
 --->
 
-## Portfolio development
+## Portfolio site
 
-```bash
-npm install
-npm run dev
-npm run lint
-npm run build
-```
-
-The site deploys to GitHub Pages through `.github/workflows/deploy.yml`.
-Helios Gateway issues are displayed as portfolio quests. The optional labels
-`quest:main`, `quest:side`, `status:blocked`, `area:frontend`,
-`area:gateway`, `area:security`, and `area:docs` provide additional UI
-classification; unlabeled issues continue to work normally.
-The first release intentionally reads at most the 100 issues requested on the
-initial GitHub API page.
+https://zizitop13.github.io/zizitop13/
