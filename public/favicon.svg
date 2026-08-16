@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Green histogram">
+  <rect width="64" height="64" rx="12" fill="#0b1810"/>
+  <path d="M8 51.5h48" stroke="#6f9473" stroke-width="3" stroke-linecap="round"/>
+  <rect x="11" y="35" width="7" height="14" rx="1" fill="#6f9473"/>
+  <rect x="21" y="25" width="7" height="24" rx="1" fill="#9ccc8c"/>
+  <rect x="31" y="31" width="7" height="18" rx="1" fill="#7fab79"/>
+  <rect x="41" y="15" width="7" height="34" rx="1" fill="#d3efc7"/>
+  <rect x="51" y="22" width="5" height="27" rx="1" fill="#9ccc8c"/>
+</svg>
