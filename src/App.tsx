@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 
 const links = {
   github: 'https://github.com/zizitop13',
@@ -6,7 +7,7 @@ const links = {
   helios: 'https://github.com/zizitop13/helios-gateway',
 }
 
-function ExternalLink({ href, children }: { href: string; children: React.ReactNode }) {
+function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   return <a className="terminal-link" href={href} target="_blank" rel="noreferrer">{children}<span aria-hidden="true"> ↗</span></a>
 }
 
@@ -60,7 +61,7 @@ export default function App() {
               <div className="screen-index" aria-hidden="true">01</div>
               <p className="eyebrow">IDENT / PRIMARY RECORD</p>
               <dl className="identity-grid">
-                <dt>IDENT</dt><dd>MAKSIM ZINIAKOV</dd>
+                <dt>IDENT</dt><dd><h1 className="identity-name">MAKSIM ZINIAKOV</h1></dd>
                 <dt>ROLE</dt><dd>SENIOR SOFTWARE ENGINEER</dd>
                 <dt>LOCATION</dt><dd>FRANKFURT AM MAIN, DE</dd>
               </dl>

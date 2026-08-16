@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
-
-:root { color-scheme: dark; font-family: 'IBM Plex Mono', 'Cascadia Mono', Consolas, monospace; color: #dedbd3; background: #080807; font-synthesis: none; font-variant-numeric: tabular-nums; }
+:root { color-scheme: dark; font-family: 'JetBrains Mono', 'IBM Plex Mono', 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace; color: #dedbd3; background: #080807; font-synthesis: none; font-variant-numeric: tabular-nums; }
 * { box-sizing: border-box; }
 html, body, #root { min-width: 320px; min-height: 100%; margin: 0; }
 body { min-height: 100vh; background: #080807; }
@@ -9,7 +7,7 @@ button { color: inherit; }
 a { color: inherit; }
 .shell { position: relative; isolation: isolate; display: grid; min-height: 100svh; padding: clamp(18px, 4vw, 64px); overflow: hidden; place-items: center; }
 .shell::after { content: ''; position: fixed; z-index: -1; inset: 0; pointer-events: none; opacity: .07; background: repeating-linear-gradient(0deg, transparent 0 3px, #fff 4px); mix-blend-mode: soft-light; }
-.solar-field { position: fixed; z-index: -2; inset: 0; background: linear-gradient(90deg, #080807 10%, rgba(8,8,7,.82) 45%, rgba(8,8,7,.28)), linear-gradient(0deg, #080807 0%, transparent 38%, #080807 100%), url('/wispr-parker.webp') 82% 48% / min(72vw, 1100px) auto no-repeat; filter: grayscale(1) contrast(1.45); opacity: .38; }
+.solar-field { position: fixed; z-index: -2; inset: 0; background: linear-gradient(90deg, #080807 10%, rgba(8,8,7,.82) 45%, rgba(8,8,7,.28)), linear-gradient(0deg, #080807 0%, transparent 38%, #080807 100%), url('./assets/wispr-parker.webp') 82% 48% / min(72vw, 1100px) auto no-repeat; filter: grayscale(1) contrast(1.45); opacity: .38; }
 .terminal { width: min(1060px, 100%); min-height: min(720px, calc(100svh - 72px)); display: grid; grid-template-rows: auto auto 1fr auto; background: rgba(15,15,14,.92); border: 1px solid #5b5a55; box-shadow: 0 24px 70px rgba(0,0,0,.38); }
 .terminal-header, .terminal-footer, .screen-tabs { display: flex; align-items: center; }
 .terminal-header { justify-content: space-between; min-height: 45px; padding: 0 18px; border-bottom: 1px solid #3d3c39; color: #9c9991; font-size: 11px; letter-spacing: .1em; }
@@ -21,12 +19,13 @@ a { color: inherit; }
 button:focus-visible, a:focus-visible { outline: 2px solid #eeeae1; outline-offset: 3px; }
 .viewport { min-height: 0; overflow: hidden; }
 .track { width: 200%; height: 100%; display: flex; transition: transform 160ms steps(4, end); }
-.screen { position: relative; width: 50%; flex: 0 0 50%; min-height: 100%; padding: clamp(34px, 7vw, 86px) clamp(24px, 8vw, 96px); overflow: hidden; }
+.screen { position: relative; width: 50%; flex: 0 0 50%; min-height: 100%; padding: clamp(34px, 7vw, 86px) clamp(24px, 8vw, 96px); }
 .screen-index { position: absolute; top: 18px; right: 26px; color: #272725; font-size: clamp(90px, 15vw, 180px); font-weight: 600; line-height: 1; user-select: none; }
 .eyebrow { position: relative; margin: 0 0 clamp(34px, 6vw, 62px); color: #918e86; font-size: 11px; letter-spacing: .15em; }
 .identity-grid, .project-status { position: relative; display: grid; grid-template-columns: 112px 1fr; gap: 13px 18px; margin: 0; }
 dt { color: #85827b; font-size: 12px; letter-spacing: .08em; }
 dd { margin: 0; color: #ebe7de; font-size: clamp(14px, 2vw, 20px); letter-spacing: .025em; }
+.identity-name { margin: 0; font: inherit; letter-spacing: inherit; }
 .description { position: relative; max-width: 680px; margin: clamp(38px, 6vw, 70px) 0 0; color: #b7b3aa; font-size: clamp(14px, 1.7vw, 17px); line-height: 1.75; }
 .link-list { display: flex; flex-wrap: wrap; gap: 12px 34px; margin-top: clamp(36px, 6vw, 62px); }
 .terminal-link { display: inline-block; padding: 8px 0; color: #dcd8cf; font-size: 14px; text-decoration: none; border-bottom: 1px solid #68665f; }
