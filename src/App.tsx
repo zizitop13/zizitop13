@@ -1,96 +1,125 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { ReactNode } from 'react'
+import { LinksPanel } from './components/LinksPanel'
+import { QuestsPanel } from './components/QuestsPanel'
+import { SkillsPanel } from './components/SkillsPanel'
+import { StatusPanel } from './components/StatusPanel'
+import { tabs, TerminalTabs } from './components/TerminalTabs'
 
-const links = {
-  github: 'https://github.com/zizitop13',
-  linkedin: 'https://www.linkedin.com/in/maksim-ziniakov-6005a124b',
-  helios: 'https://github.com/zizitop13/helios-gateway',
-}
+const CRT_KEY = 'mz-crt-enabled'
 
-function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
-  return <a className="terminal-link" href={href} target="_blank" rel="noreferrer">{children}<span aria-hidden="true"> ↗</span></a>
+function readCrtPreference() {
+  try {
+    return localStorage.getItem(CRT_KEY) !== 'false'
+  } catch {
+    return true
+  }
 }
 
 export default function App() {
-  const [screen, setScreen] = useState(0)
-  const [booting, setBooting] = useState(() => !sessionStorage.getItem('mz-booted'))
-  const touchStart = useRef<number | null>(null)
+  const [activeTab, setActiveTab] = useState(0)
+  const [crtEnabled, setCrtEnabled] = useState(readCrtPreference)
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
 
-  const goTo = useCallback((next: number) => setScreen(Math.max(0, Math.min(1, next))), [])
+  const selectTab = useCallback((index: number, moveFocus = false) => {
+    const normalized = (index + tabs.length) % tabs.length
+    setActiveTab(normalized)
+    if (moveFocus) requestAnimationFrame(() => tabRefs.current[normalized]?.focus())
+  }, [])
 
-  useEffect(() => {
-    if (!booting) return
-    sessionStorage.setItem('mz-booted', '1')
-    const timer = window.setTimeout(() => setBooting(false), 560)
-    return () => window.clearTimeout(timer)
-  }, [booting])
+  const toggleCrt = () => {
+    setCrtEnabled(current => {
+      const next = !current
+      try { localStorage.setItem(CRT_KEY, String(next)) } catch { /* Preference remains in memory. */ }
+      return next
+    })
+  }
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft') { event.preventDefault(); goTo(screen - 1) }
-      if (event.key === 'ArrowRight') { event.preventDefault(); goTo(screen + 1) }
-      if (event.key === 'Home') { event.preventDefault(); goTo(0) }
+      if (event.altKey || event.ctrlKey || event.metaKey) return
+      const target = event.target as HTMLElement
+      if (target.matches('input, textarea, select')) return
+
+      let next: number | null = null
+      if (event.key === 'ArrowLeft') next = activeTab - 1
+      if (event.key === 'ArrowRight') next = activeTab + 1
+      if (event.key === 'Home') next = 0
+      if (event.key === 'End') next = tabs.length - 1
+      if (/^[1-4]$/.test(event.key)) next = Number(event.key) - 1
+      if (next === null) return
+
+      event.preventDefault()
+      selectTab(next)
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [goTo, screen])
+  }, [activeTab, selectTab])
 
   return (
-    <main className="shell" onTouchStart={e => { touchStart.current = e.touches[0].clientX }} onTouchEnd={e => {
-      if (touchStart.current === null) return
-      const delta = e.changedTouches[0].clientX - touchStart.current
-      if (Math.abs(delta) > 55) goTo(screen + (delta < 0 ? 1 : -1))
-      touchStart.current = null
-    }}>
-      <div className="solar-field" aria-hidden="true" />
-      {booting && <div className="boot" role="status"><span>WISPR//PORTFOLIO</span><span>LINK ........ OK</span><span>READY<span className="block-cursor" /></span></div>}
-      <section className="terminal" aria-label="Portfolio terminal">
-        <header className="terminal-header">
-          <div><span className="status-dot" aria-hidden="true" /> SYS.PORTFOLIO</div>
-          <div className="system-status">FRANKFURT / <span>ONLINE</span></div>
-        </header>
+    <main className={`portfolio-shell ${crtEnabled ? 'crt-on' : 'crt-off'}`}>
+      <div className="ambient-image" aria-hidden="true" />
+      <section className="device-frame" aria-label="Maksim Ziniakov engineering status terminal">
+        <span className="frame-screw screw-a" aria-hidden="true" />
+        <span className="frame-screw screw-b" aria-hidden="true" />
+        <span className="frame-screw screw-c" aria-hidden="true" />
+        <span className="frame-screw screw-d" aria-hidden="true" />
 
-        <nav className="screen-tabs" aria-label="Portfolio screens">
-          <button className={screen === 0 ? 'active' : ''} onClick={() => goTo(0)} aria-current={screen === 0 ? 'page' : undefined}>01 / IDENTITY</button>
-          <button className={screen === 1 ? 'active' : ''} onClick={() => goTo(1)} aria-current={screen === 1 ? 'page' : undefined}>02 / HELIOS</button>
-        </nav>
-
-        <div className="viewport">
-          <div className="track" style={{ transform: `translateX(-${screen * 50}%)` }}>
-            <article className="screen" aria-hidden={screen !== 0} inert={screen !== 0 ? true : undefined}>
-              <div className="screen-index" aria-hidden="true">01</div>
-              <p className="eyebrow">IDENT / PRIMARY RECORD</p>
-              <dl className="identity-grid">
-                <dt>IDENT</dt><dd><h1 className="identity-name">MAKSIM ZINIAKOV</h1></dd>
-                <dt>ROLE</dt><dd>SENIOR SOFTWARE ENGINEER</dd>
-                <dt>LOCATION</dt><dd>FRANKFURT AM MAIN, DE</dd>
-              </dl>
-              <p className="description">Java, Kotlin, and JavaScript engineer specializing in high-performance distributed systems, concurrency, cloud infrastructure, and developer tooling.</p>
-              <div className="link-list" aria-label="Professional profiles">
-                <ExternalLink href={links.github}>github</ExternalLink>
-                <ExternalLink href={links.linkedin}>linkedin</ExternalLink>
+        <div className="display-bezel">
+          <div className="display-screen">
+            <div className="crt-overlay" aria-hidden="true"><span /></div>
+            <header className="terminal-header">
+              <div className="terminal-brand">
+                <span className="brand-mark" aria-hidden="true">MZ</span>
+                <div><strong>ENGINEERING STATUS TERMINAL</strong><small>PERSONAL SYSTEM / REV. 11</small></div>
               </div>
-            </article>
+              <div className="header-telemetry" aria-label="System online">
+                <span>SYS</span><strong>ONLINE</strong><i aria-hidden="true" />
+              </div>
+            </header>
 
-            <article className="screen helios" aria-hidden={screen !== 1} inert={screen !== 1 ? true : undefined}>
-              <div className="screen-index" aria-hidden="true">02</div>
-              <p className="eyebrow">PROJECT / 01</p>
-              <h1>HELIOS<br />GATEWAY</h1>
-              <p className="description">An open-source GraphQL Federation gateway with authentication, role-based access control, service discovery, and cloud-native deployment support.</p>
-              <dl className="project-status"><dt>STATUS</dt><dd><span className="status-dot" aria-hidden="true" /> ACTIVE</dd><dt>LINK</dt><dd>PUBLIC REPOSITORY</dd></dl>
-              <div className="link-list"><ExternalLink href={links.helios}>open repository</ExternalLink></div>
-            </article>
+            <TerminalTabs activeIndex={activeTab} onSelect={selectTab} tabRefs={tabRefs} />
+
+            <div className="terminal-content">
+              <section id="panel-status" role="tabpanel" aria-labelledby="tab-status" hidden={activeTab !== 0} tabIndex={0}>
+                <StatusPanel />
+              </section>
+              <section id="panel-skills" role="tabpanel" aria-labelledby="tab-skills" hidden={activeTab !== 1} tabIndex={0}>
+                <SkillsPanel />
+              </section>
+              <section id="panel-quests" role="tabpanel" aria-labelledby="tab-quests" hidden={activeTab !== 2} tabIndex={0}>
+                <QuestsPanel />
+              </section>
+              <section id="panel-links" role="tabpanel" aria-labelledby="tab-links" hidden={activeTab !== 3} tabIndex={0}>
+                <LinksPanel />
+              </section>
+            </div>
+
+            <footer className="terminal-status-bar">
+              <div className="key-hints" aria-hidden="true"><span>[←] PREV</span><span>[→] NEXT</span><span>[ENTER] SELECT</span></div>
+              <span className="crt-control">
+                <button
+                  className="crt-toggle"
+                  type="button"
+                  onClick={toggleCrt}
+                  aria-pressed={crtEnabled}
+                  aria-describedby="crt-tooltip"
+                >
+                  CRT: <strong>{crtEnabled ? 'ON' : 'OFF'}</strong>
+                </button>
+                <span id="crt-tooltip" className="control-tooltip" role="tooltip">
+                  Cathode-ray tube effects: {crtEnabled ? 'on' : 'off'}
+                </span>
+              </span>
+              <span className="system-clock">FRA / UTC+02</span>
+            </footer>
           </div>
         </div>
 
-        <footer className="terminal-footer">
-          <div className="nav-controls">
-            <button onClick={() => goTo(screen - 1)} disabled={screen === 0} aria-label="Previous screen">[←] <span>PREV</span></button>
-            <span className="enter-hint">[ENTER] OPEN</span>
-            <button onClick={() => goTo(screen + 1)} disabled={screen === 1} aria-label="Next screen"><span>NEXT</span> [→]</button>
-          </div>
-          <a className="credit" href="https://svs.gsfc.nasa.gov/14865" target="_blank" rel="noreferrer">WISPR imagery: NASA / Johns Hopkins APL / NRL</a>
-        </footer>
+        <div className="device-controls" aria-hidden="true">
+          <span className="vent-lines" />
+          <span className="dial"><i /></span>
+          <span className="serial">MZ–11 / 2026</span>
+        </div>
       </section>
     </main>
   )

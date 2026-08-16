@@ -1,0 +1,586 @@
+{
+  "picture": {
+    "hidden": false,
+    "url": "http://localhost:3000/api/uploads/019fb1be-0dfc-74cd-9deb-dfe519421f0e/pictures/1785588729977.jpeg",
+    "size": 80,
+    "rotation": 0,
+    "aspectRatio": 1,
+    "borderRadius": 0,
+    "borderColor": "rgba(0, 0, 0, 0.5)",
+    "borderWidth": 0,
+    "shadowColor": "rgba(0, 0, 0, 0.5)",
+    "shadowWidth": 0
+  },
+  "basics": {
+    "name": "Maksim Ziniakov",
+    "headline": "Senior Software Engineer",
+    "email": "zinmv@outlook.com",
+    "phone": "+49 177 9039423",
+    "location": "Frankfurt am Main, Germany, DE",
+    "website": {
+      "url": "https://github.com/zizitop13",
+      "label": "https://github.com/zizitop13"
+    },
+    "customFields": []
+  },
+  "summary": {
+    "title": "",
+    "icon": "article",
+    "columns": 1,
+    "hidden": false,
+    "keepTogether": false,
+    "startOnNewPage": false,
+    "content": "<p>Senior Software Engineer and technical leader with 11+ years of experience designing high-throughput, enterprise-grade systems. Deep expertise in Java, Spring, distributed systems, SQL, concurrency, microservices, and cloud-native delivery. Proven record of accelerating delivery, leading engineering teams, modernizing DevOps practices, and building reliable platforms across fintech, retail and logistic, banking, and government services.</p>"
+  },
+  "sections": {
+    "profiles": {
+      "title": "",
+      "icon": "messenger-logo",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-347599d4430b",
+          "hidden": false,
+          "icon": "linkedin-logo",
+          "iconColor": "",
+          "network": "LinkedIn",
+          "username": "maksim-ziniakov-6005a124b",
+          "website": {
+            "url": "https://www.linkedin.com/in/maksim-ziniakov-6005a124b",
+            "label": "maksim-ziniakov-6005a124b",
+            "inlineLink": false
+          }
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-39e2a60310ee",
+          "hidden": false,
+          "icon": "github-logo",
+          "iconColor": "",
+          "network": "GitHub",
+          "username": "zizitop13",
+          "website": {
+            "url": "https://github.com/zizitop13",
+            "label": "zizitop13",
+            "inlineLink": false
+          }
+        }
+      ]
+    },
+    "experience": {
+      "title": "",
+      "icon": "briefcase",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019fb1c7-2fcb-726f-81e6-2072426fbd1f",
+          "hidden": false,
+          "company": "360 Treasury Systems AG",
+          "position": "Senior Java Developer",
+          "location": "Frankfurt am Main, Germany",
+          "period": "February 2024 - Present",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>FX trading platform engineering.</p><ul><li><p>Develop an FX trading platform using Java 8-17 with native C++ components.</p></li><li><p>Design custom high-performance solutions using deep Java concurrency expertise.</p></li><li><p>Work with Oracle, PostgreSQL, and Spring while minimizing external dependencies to optimize memory use and runtime efficiency.</p></li><li><p>Help drive the adoption of AI-assisted development by introducing reusable skills, project-specific rules, and MCP-based integrations. </p></li></ul><hr><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019fb1c7-2fcb-726f-81e6-26688efd26b0",
+          "hidden": false,
+          "company": "EPAM Anywhere",
+          "position": "Software Development Team Lead",
+          "location": "Georgia, Tbilisi",
+          "period": "May 2022 - December 2023",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Estée Lauder Runway ERP platform.</p><ul><li><p>Led a backend team designing and delivering scalable microservices with Spring Boot, Azure, and Kubernetes.</p></li><li><p>Reduced delivery cycles from six months to one-to-two months by replacing Water-Scrum-Fall with an effective Scrum delivery model.</p></li><li><p>Introduced Domain-Driven Design to align services and business capabilities.</p></li><li><p>Mentored engineers, standardized interviews, and established continuous-improvement practices.</p></li></ul><hr><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019fb1c7-2fcb-726f-81e6-288012af2168",
+          "hidden": false,
+          "company": "X5 Group",
+          "position": "Senior Java Software Engineer / Technical Lead",
+          "location": "Moscow, Russia",
+          "period": "April 2021 - April 2022",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>5Post parcel-machine network.</p><ul><li><p>Designed parcel-machine software and a React operations portal built on a microservices architecture.</p></li><li><p>Reduced delivery lead time from months to weeks through feature toggles, canary deployments, and automated testing.</p></li><li><p>Deployed and operated services on Kubernetes and OpenShift with GitLab CI/CD.</p></li><li><p>Led technical and cultural improvements through collaborative engineering decision-making.</p></li></ul><hr><p></p><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019fb1c7-2fcb-726f-81e6-2d93eb193189",
+          "hidden": false,
+          "company": "Sberbank",
+          "position": "Java Developer → Senior Java Developer → DevOps Lead",
+          "location": "Moscow, Russia",
+          "period": "November 2018 - April 2021",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Government-service integration platform.</p><ul><li><p>Designed high-throughput backend systems integrating banking and government services.</p></li><li><p>Led a DevOps transformation affecting 350 employees and introduced Docker and OpenShift.</p></li><li><p>Moved half of the project portfolio to cloud-native deployment models.</p></li><li><p>Improved delivery confidence with BDD and automated CI/CD pipelines.</p></li></ul><hr><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019fb1c7-2fcb-726f-81e6-3173b281ff13",
+          "hidden": false,
+          "company": "UNIS Labs",
+          "position": "Java Software Engineer",
+          "location": "Moscow, Russia",
+          "period": "February 2015 - October 2018",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": "<p>Pension-fund administration system.</p><ul><li>Developed and maintained pension-data management capabilities with Java EE and IBM WebSphere.</li><li>Optimized SQL queries and implemented statistical reporting modules.</li><li>Mentored junior developers and introduced unit testing to improve reliability.</li></ul>",
+          "roles": []
+        }
+      ]
+    },
+    "education": {
+      "title": "",
+      "icon": "graduation-cap",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-03f440703652",
+          "hidden": false,
+          "school": "Russian State Social University",
+          "degree": "Bachelor of Engineering in Information Technology",
+          "area": "Information Technology",
+          "grade": "",
+          "location": "",
+          "period": "September 2012 - July 2016",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": ""
+        }
+      ]
+    },
+    "projects": {
+      "title": "",
+      "icon": "code-simple",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "skills": {
+      "title": "",
+      "icon": "compass-tool",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-04d6f40a72db",
+          "hidden": false,
+          "icon": "star",
+          "iconColor": "",
+          "name": "Backend Engineering",
+          "proficiency": "Expert",
+          "level": 5,
+          "keywords": [
+            "Java",
+            "Kotlin",
+            "Spring",
+            "Java EE",
+            "Concurrency"
+          ]
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-08f6e1562a5b",
+          "hidden": false,
+          "icon": "star",
+          "iconColor": "",
+          "name": "Architecture",
+          "proficiency": "Expert",
+          "level": 5,
+          "keywords": [
+            "Distributed Systems",
+            "Microservices",
+            "Domain-Driven Design",
+            "Event-Driven Architecture",
+            "High-Throughput Systems",
+            "Performance Engineering"
+          ]
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-0f9696138923",
+          "hidden": false,
+          "icon": "star",
+          "iconColor": "",
+          "name": "Cloud & Platform",
+          "proficiency": "Advanced",
+          "level": 5,
+          "keywords": [
+            "Google Cloud",
+            "Azure",
+            "Kubernetes",
+            "OpenShift",
+            "Docker",
+            "Istio",
+            "Puppet",
+            "Ansible",
+            "Terraform"
+          ]
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-1169e734ac26",
+          "hidden": false,
+          "icon": "star",
+          "iconColor": "",
+          "name": "Data & Messaging",
+          "proficiency": "Advanced",
+          "level": 5,
+          "keywords": [
+            "SQL",
+            "Oracle",
+            "PostgreSQL",
+            "Kafka",
+            "IBM MQ",
+            "MQTT",
+            "NoSQL",
+            "Cassandra",
+            "Redis"
+          ]
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-178ee1c5ee71",
+          "hidden": false,
+          "icon": "star",
+          "iconColor": "",
+          "name": "Delivery & Quality",
+          "proficiency": "Expert",
+          "level": 5,
+          "keywords": [
+            "DevOps",
+            "CI/CD",
+            "BDD",
+            "GitLab CI",
+            "Azure DevOps",
+            "Feature Toggles",
+            "GitHub Actions",
+            "Bamboo",
+            "Jenkins",
+            "Cucumber",
+            "Cypress",
+            "PlayWrite"
+          ]
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-1e685f25ec37",
+          "hidden": false,
+          "icon": "star",
+          "iconColor": "",
+          "name": "Leadership",
+          "proficiency": "Expert",
+          "level": 5,
+          "keywords": [
+            "Technical Leadership",
+            "Team Leadership",
+            "Mentoring",
+            "Interviewing",
+            "Agile Transformation",
+            "Continuous Improvement"
+          ]
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-1b618852403a",
+          "hidden": false,
+          "icon": "star",
+          "iconColor": "",
+          "name": "Frontend",
+          "proficiency": "Proficient",
+          "level": 4,
+          "keywords": [
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "HTML",
+            "CSS",
+            "Ionic"
+          ]
+        }
+      ]
+    },
+    "languages": {
+      "title": "",
+      "icon": "translate",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-2120eb9c54d9",
+          "hidden": false,
+          "language": "English",
+          "fluency": "Professional working proficiency",
+          "level": 0
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-254f23531267",
+          "hidden": false,
+          "language": "Russian",
+          "fluency": "Native",
+          "level": 0
+        }
+      ]
+    },
+    "interests": {
+      "title": "",
+      "icon": "football",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "awards": {
+      "title": "",
+      "icon": "trophy",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "certifications": {
+      "title": "",
+      "icon": "certificate",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-2b56fcfe261a",
+          "hidden": false,
+          "title": "Professional Cloud Developer",
+          "issuer": "Google Cloud",
+          "date": "April 2023",
+          "website": {
+            "url": "",
+            "label": "",
+            "inlineLink": false
+          },
+          "description": ""
+        }
+      ]
+    },
+    "publications": {
+      "title": "",
+      "icon": "books",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": [
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-2effc093b0c8",
+          "hidden": false,
+          "title": "Trunk Based Development and Spring Boot, or Branching It All Out by Abstraction",
+          "publisher": "Habr",
+          "date": "2020",
+          "website": {
+            "url": "https://habr.com/ru/articles/534882/",
+            "label": "https://habr.com/ru/articles/534882/",
+            "inlineLink": false
+          },
+          "description": "<p>Article in Russian.</p>"
+        },
+        {
+          "id": "019fb1c7-2fcc-75bb-b1ed-32ede2427831",
+          "hidden": false,
+          "title": "Cook BDD Properly",
+          "publisher": "LinkedIn",
+          "date": "",
+          "website": {
+            "url": "https://www.linkedin.com/pulse/cook-bdd-properly-maksim-ziniakov/",
+            "label": "https://www.linkedin.com/pulse/cook-bdd-properly-maksim-ziniakov/",
+            "inlineLink": false
+          },
+          "description": "<p>Article in English.</p>"
+        }
+      ]
+    },
+    "volunteer": {
+      "title": "",
+      "icon": "hand-heart",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    },
+    "references": {
+      "title": "",
+      "icon": "phone",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "items": []
+    }
+  },
+  "customSections": [
+    {
+      "title": "Cover Letter",
+      "icon": "",
+      "columns": 1,
+      "hidden": true,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "id": "019fc2e1-23a5-713d-9bbb-ceb39b1d941c",
+      "type": "cover-letter",
+      "items": [
+        {
+          "id": "019fc2e7-767d-7038-8750-e10a52c020df",
+          "hidden": false,
+          "recipient": "<p>vent.io</p>",
+          "content": "<p>Dear <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://vent.io\">vent.io</a> Hiring Team,</p><p>I am excited to apply for the Software Engineer position in your Product Engineering department. The role particularly caught my attention because it combines full-stack product development, architectural responsibility, cloud-native engineering, and end-to-end ownership—areas that closely match both my experience and the kind of work I enjoy.</p><p>I am a Senior Software Engineer with more than eleven years of experience building reliable, data-intensive, and enterprise-grade systems. In my current role at 360 Treasury Systems, I work on an FX trading platform using Java, Spring, Oracle, PostgreSQL, and native C++ components. My work involves developing performance-sensitive solutions, applying Java concurrency expertise, and carefully considering runtime efficiency, reliability, and maintainability.</p><p>Although backend engineering is my strongest area, I also have practical full-stack experience with TypeScript, JavaScript, React, and Cypress. At X5 Group, I helped design and build a React-based operations portal alongside Java and Kotlin microservices. This required close coordination between frontend and backend development, designing reliable interfaces, and ensuring that applications could be tested, deployed, and operated effectively.</p><p>I also bring substantial cloud and DevOps experience. At EPAM, I led the development of Spring Boot microservices running on Azure and Kubernetes, introduced Domain-Driven Design, and helped reduce delivery cycles from approximately six months to one or two months. At Sberbank, I led a DevOps transformation affecting around 350 employees, introduced Docker and OpenShift, and helped move a significant part of the project portfolio toward cloud-native deployment models.</p><p>Throughout my career, I have taken responsibility beyond implementing individual features. I consider how components interact, how systems behave under failure and increased load, how data should be modeled, and how software can be safely deployed and observed in production. I have worked with SQL and NoSQL technologies, distributed systems, event-driven architectures, automated CI/CD pipelines, feature toggles, canary deployments, and infrastructure-oriented engineering practices.</p><p>The opportunity to work in a product-focused environment with start-up flexibility and the stability of the Sparkassen-Finanzgruppe is especially attractive to me. I would be glad to contribute my backend and architectural expertise while continuing to deepen my frontend, Azure, observability, and AI-driven engineering skills.</p><p>I hold a Bachelor of Engineering in Information Technology and a Google Cloud Professional Cloud Developer certification. I work fluently in English and value direct communication, technical openness, and close collaboration across engineering, product, and design disciplines.</p><p>Thank you for considering my application. I would welcome the opportunity to discuss how my experience could contribute to <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://vent.io\">vent.io</a>’s digital products and engineering culture.</p><p>Best regards,</p><p>Maksim Ziniakov</p>"
+        }
+      ]
+    },
+    {
+      "title": "Cover Leter",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": true,
+      "startOnNewPage": false,
+      "id": "019fc31b-a125-74f7-91b6-2ae0748bb5a2",
+      "type": "cover-letter",
+      "items": [
+        {
+          "id": "019fc31b-d8c2-73cd-be51-b8f8c609409b",
+          "hidden": true,
+          "recipient": "<p>HiveMQ </p>",
+          "content": "<p>Dear HiveMQ Hiring Team,</p><p>I am excited to apply for the Software Engineer position at HiveMQ. The role immediately caught my attention because it combines areas that closely match my experience: JVM engineering, concurrency, high-throughput systems, performance optimization, event-driven architecture, and reliable cloud-native software.</p><p>I am a Senior Software Engineer and technical leader with more than eleven years of experience designing and delivering enterprise-grade backend systems. In my current role at 360 Treasury Systems, I develop an FX trading platform using Java 8–17 with native C++ components. My work includes designing custom high-performance solutions, solving concurrency-related problems, and carefully managing memory use, runtime efficiency, reliability, and maintainability.</p><p>HiveMQ’s focus on massively scalable IoT deployments is particularly relevant to my previous experience at X5 Group. There, I helped design software for a distributed parcel-machine network using Java, Kotlin, Spring Boot, MQTT, Redis, PostgreSQL, and Raspberry Pi devices. I also contributed to its supporting React operations portal and helped improve delivery through automated testing, feature toggles, canary deployments, Kubernetes, OpenShift, and GitLab CI/CD.</p><p>I also bring extensive experience with Git, automated testing, CI/CD, Docker, Kubernetes, NoSQL technologies, Kafka, event-driven systems, and DevOps practices. I have led engineering improvements across teams, mentored developers, and introduced practices that made software delivery faster and more reliable. At the same time, I remain hands-on and take personal responsibility for the quality and operational behavior of the software I build.</p><p>HiveMQ’s combination of deep JVM engineering, distributed systems, MQTT, industrial IoT, and performance-sensitive development makes this opportunity especially compelling to me. I would welcome the chance to contribute my experience in Java, concurrency, scalable architectures, and reliable software delivery to the continued development of the HiveMQ platform.</p><p>Thank you for considering my application. I look forward to the opportunity to discuss how my background could contribute to HiveMQ’s engineering team.</p><p>Best regards,<br><strong>Maksim Ziniakov</strong></p>"
+        },
+        {
+          "id": "019fe804-5158-711c-919d-371f0e14bbb5",
+          "hidden": false,
+          "recipient": "<p>ING</p>",
+          "content": "<p>Dear ING Hiring Team,</p><p>I am excited to apply for the Software Engineer position in the Business Banking Cards domain.</p><p>A friend recently showed me the ING app, and I immediately liked how it looks and feels. The consistency and attention to small details gave me the impression that it was built by people who, like me, are genuinely passionate about software. </p><p>I have more than eleven years of experience in Java development and substantial experience in the financial domain. I enjoy working with complex business rules and translating them carefully into code and system design. </p><p>My main stack includes Java, Spring, Oracle, PostgreSQL, Kafka, distributed systems, and cloud-native development. I have strong hands-on experience with Azure and Kubernetes and have worked on large systems consisting of dozens of microservices and integrations with external systems. This involved defining transaction and consistency boundaries, designing APIs and database schemas, choosing read/write and locking strategies, optimizing SQL queries and indexes.</p><p>I also contribute to integrating AI into the software development process. This includes developing reusable AI skills and project-specific rules, working with MCP servers and RAG-based approaches, and exploring spec-driven development. </p><p>Throughout my career, I have taken end-to-end responsibility for software, from design and implementation to testing, CI/CD, deployment, production support, and further improvement. I also have experience mentoring engineers and leading technical and delivery improvements.</p><p> I would be glad to bring my experience to ING and contribute to the Business Banking Cards domain.</p><p>Best regards,<br><strong>Maksim Ziniakov</strong></p>"
+        }
+      ]
+    },
+    {
+      "title": "",
+      "icon": "",
+      "columns": 1,
+      "hidden": false,
+      "keepTogether": false,
+      "startOnNewPage": false,
+      "id": "019fd3d7-fdca-7159-ae15-9bf55f43b997",
+      "type": "interests",
+      "items": []
+    }
+  ],
+  "metadata": {
+    "template": "pikachu",
+    "layout": {
+      "sidebarWidth": 20.93,
+      "pages": [
+        {
+          "fullWidth": true,
+          "main": [
+            "summary",
+            "experience",
+            "education",
+            "languages",
+            "projects",
+            "volunteer",
+            "references",
+            "certifications",
+            "awards",
+            "interests",
+            "publications",
+            "profiles"
+          ],
+          "sidebar": []
+        },
+        {
+          "fullWidth": true,
+          "main": [
+            "skills",
+            "019fc2e1-23a5-713d-9bbb-ceb39b1d941c",
+            "019fc31b-a125-74f7-91b6-2ae0748bb5a2",
+            "019fd3d7-fdca-7159-ae15-9bf55f43b997"
+          ],
+          "sidebar": []
+        }
+      ]
+    },
+    "page": {
+      "gapX": 4,
+      "gapY": 6,
+      "marginX": 14,
+      "marginY": 12,
+      "format": "a4",
+      "locale": "en-US",
+      "hideLinkUnderline": false,
+      "hideIcons": false,
+      "hideSectionIcons": false
+    },
+    "design": {
+      "level": {
+        "icon": "coffee",
+        "type": "circle"
+      },
+      "colors": {
+        "primary": "rgba(44, 46, 41, 1)",
+        "text": "rgba(0, 0, 0, 1)",
+        "background": "rgba(255, 255, 255, 1)"
+      }
+    },
+    "typography": {
+      "body": {
+        "fontFamily": "IBM Plex Serif",
+        "fontWeights": [
+          "400",
+          "500"
+        ],
+        "fontSize": 10,
+        "lineHeight": 1.5
+      },
+      "heading": {
+        "fontFamily": "IBM Plex Serif",
+        "fontWeights": [
+          "600"
+        ],
+        "fontSize": 14,
+        "lineHeight": 1.5
+      }
+    },
+    "notes": "",
+    "styleRules": []
+  }
+}
