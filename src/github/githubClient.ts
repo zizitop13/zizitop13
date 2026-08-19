@@ -2,7 +2,7 @@ import type { GitHubIssue } from './githubTypes'
 
 export const ISSUES_URL = 'https://api.github.com/repos/zizitop13/helios-gateway/issues?state=all&per_page=100'
 export const ISSUES_PAGE_URL = 'https://github.com/zizitop13/helios-gateway/issues'
-export const CACHE_KEY = 'helios-quest-cache-v1'
+export const CACHE_KEY = 'helios-project-cache-v2'
 export const CACHE_TTL_MS = 15 * 60 * 1000
 
 export interface IssueCache {

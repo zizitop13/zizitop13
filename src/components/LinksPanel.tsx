@@ -48,7 +48,7 @@ export function LinksPanel() {
 
   return (
     <section className="links-panel" aria-labelledby="links-heading">
-      <p className="section-code">EXTERNAL COMLINKS / PUBLIC</p>
+      <p className="section-code">~/links</p>
       <h2 id="links-heading">LINKS</h2>
       <ul>
         {links.map(([label, url], index) => (

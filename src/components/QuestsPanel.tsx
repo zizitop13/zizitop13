@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ISSUES_PAGE_URL } from '../github/githubClient'
-import type { Quest } from '../github/githubTypes'
+import type { ProjectIssue } from '../github/githubTypes'
 import { useRepositoryIssues } from '../github/useRepositoryIssues'
 import { publicLinks } from '../portfolioData'
 
@@ -8,72 +8,72 @@ function formatDate(value: string) {
   return new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(value)).toUpperCase()
 }
 
-function QuestProgress({ quest }: { quest: Quest }) {
-  if (quest.progress === null) return <span className="active-copy">ACTIVE / NO CHECKLIST</span>
-  const complete = quest.status === 'COMPLETED' ? quest.objectives.length : quest.objectives.filter(item => item.completed).length
-  const total = quest.objectives.length
+function ProjectProgress({ project }: { project: ProjectIssue }) {
+  if (project.progress === null) return <span className="active-copy">ACTIVE / NO CHECKLIST</span>
+  const complete = project.status === 'COMPLETED' ? project.tasks.length : project.tasks.filter(item => item.completed).length
+  const total = project.tasks.length
   return (
-    <div className="quest-progress">
-      <div><span>OBJECTIVES {complete} / {total}</span><strong>{quest.progress}%</strong></div>
-      <div className="progress-track" role="progressbar" aria-label="Quest progress" aria-valuenow={quest.progress} aria-valuemin={0} aria-valuemax={100}>
-        <span style={{ width: `${quest.progress}%` }} />
+    <div className="project-progress">
+      <div><span>TASKS {complete} / {total}</span><strong>{project.progress}%</strong></div>
+      <div className="progress-track" role="progressbar" aria-label="Project progress" aria-valuenow={project.progress} aria-valuemin={0} aria-valuemax={100}>
+        <span style={{ width: `${project.progress}%` }} />
       </div>
     </div>
   )
 }
 
-function QuestDetails({ quest, onClose }: { quest: Quest, onClose: () => void }) {
+function ProjectDetails({ project, onClose }: { project: ProjectIssue, onClose: () => void }) {
   return (
-    <article className="quest-details" aria-labelledby={`quest-${quest.id}-heading`}>
+    <article className="project-details" aria-labelledby={`project-${project.id}-heading`}>
       <header>
         <div>
-          <p className="section-code">{quest.kind} / #{String(quest.id).padStart(3, '0')}</p>
-          <h3 id={`quest-${quest.id}-heading`}>{quest.title}</h3>
+          <p className="section-code">{project.kind} / #{String(project.id).padStart(3, '0')}</p>
+          <h3 id={`project-${project.id}-heading`}>{project.title}</h3>
         </div>
-        <button className="detail-close" type="button" onClick={onClose} aria-label="Close quest details">[×]</button>
+        <button className="detail-close" type="button" onClick={onClose} aria-label="Close project details">[×]</button>
       </header>
-      <div className="quest-badges">
-        <span className={`quest-state state-${quest.status.toLowerCase()}`}>{quest.status}</span>
-        {quest.categories.map(category => <span key={category}>{category}</span>)}
+      <div className="project-badges">
+        <span className={`project-state state-${project.status.toLowerCase()}`}>{project.status}</span>
+        {project.categories.map(category => <span key={category}>{category}</span>)}
       </div>
-      <p className="quest-description">{quest.description}</p>
-      <QuestProgress quest={quest} />
-      {quest.objectives.length > 0 && (
-        <section className="objectives" aria-labelledby="objectives-heading">
-          <h4 id="objectives-heading">OBJECTIVES</h4>
+      <p className="project-description">{project.description}</p>
+      <ProjectProgress project={project} />
+      {project.tasks.length > 0 && (
+        <section className="project-tasks" aria-labelledby="tasks-heading">
+          <h4 id="tasks-heading">TASKS</h4>
           <ul>
-            {quest.objectives.map((objective, index) => (
-              <li key={`${index}-${objective.text}`} className={objective.completed ? 'done' : ''}>
-                <span aria-hidden="true">[{objective.completed ? '×' : ' '}]</span> {objective.text}
+            {project.tasks.map((task, index) => (
+              <li key={`${index}-${task.text}`} className={task.completed ? 'done' : ''}>
+                <span aria-hidden="true">[{task.completed ? '×' : ' '}]</span> {task.text}
               </li>
             ))}
           </ul>
         </section>
       )}
       <footer>
-        <span>CREATED {formatDate(quest.createdAt)} / UPDATED {formatDate(quest.updatedAt)}</span>
-        <a href={quest.url} target="_blank" rel="noreferrer noopener">OPEN ON GITHUB ↗</a>
+        <span>CREATED {formatDate(project.createdAt)} / UPDATED {formatDate(project.updatedAt)}</span>
+        <a href={project.url} target="_blank" rel="noreferrer noopener">OPEN ON GITHUB ↗</a>
       </footer>
     </article>
   )
 }
 
-export function QuestsPanel() {
+export function ProjectsPanel() {
   const issueState = useRepositoryIssues()
   const [selectedId, setSelectedId] = useState<number | null>(null)
-  const selected = issueState.quests.find(quest => quest.id === selectedId) ?? null
+  const selected = issueState.projects.find(project => project.id === selectedId) ?? null
 
   useEffect(() => {
-    if (selectedId === null && issueState.quests.length > 0) setSelectedId(issueState.quests[0].id)
-  }, [issueState.quests, selectedId])
+    if (selectedId === null && issueState.projects.length > 0) setSelectedId(issueState.projects[0].id)
+  }, [issueState.projects, selectedId])
 
   const offline = issueState.source === 'stale-cache' && (issueState.status === 'error' || issueState.status === 'rate-limited')
 
   return (
-    <div className="quests-panel">
+    <div className="projects-panel">
       <header className="project-brief">
         <div>
-          <p className="section-code">MAIN QUEST / OPEN SOURCE</p>
+          <p className="section-code">~/projects/open-source</p>
           <h2>HELIOS GATEWAY</h2>
         </div>
         <span className="project-signal"><span className="indicator" aria-hidden="true" />PROJECT ACTIVE</span>
@@ -81,39 +81,39 @@ export function QuestsPanel() {
         <a href={publicLinks.helios} target="_blank" rel="noreferrer noopener">REPOSITORY ↗</a>
       </header>
 
-      <div className="comlink-message" aria-live="polite">
-        {issueState.status === 'loading' && 'ESTABLISHING COMLINK — LOADING QUEST DATA'}
-        {issueState.refreshing && 'CACHED QUEST DATA LOADED — SYNCHRONIZING'}
-        {offline && 'COMLINK OFFLINE — DISPLAYING CACHED QUEST DATA'}
-        {issueState.status === 'rate-limited' && !offline && 'COMLINK RATE LIMITED — LIVE QUEST DATA UNAVAILABLE'}
-        {issueState.status === 'error' && !offline && 'COMLINK FAILURE — LIVE QUEST DATA UNAVAILABLE'}
-        {issueState.status === 'empty' && 'NO ACTIVE OR COMPLETED ISSUE QUESTS FOUND'}
-        {issueState.status === 'success' && !issueState.refreshing && `COMLINK ONLINE — ${issueState.quests.length} QUEST${issueState.quests.length === 1 ? '' : 'S'} RECEIVED`}
+      <div className="sync-message" aria-live="polite">
+        {issueState.status === 'loading' && 'LOADING GITHUB ISSUES…'}
+        {issueState.refreshing && 'CACHED DATA LOADED — SYNCING WITH GITHUB'}
+        {offline && 'GITHUB OFFLINE — DISPLAYING CACHED DATA'}
+        {issueState.status === 'rate-limited' && !offline && 'GITHUB RATE LIMIT REACHED — LIVE DATA UNAVAILABLE'}
+        {issueState.status === 'error' && !offline && 'GITHUB REQUEST FAILED — LIVE DATA UNAVAILABLE'}
+        {issueState.status === 'empty' && 'NO ACTIVE OR COMPLETED ISSUES FOUND'}
+        {issueState.status === 'success' && !issueState.refreshing && `${issueState.projects.length} ISSUE${issueState.projects.length === 1 ? '' : 'S'} LOADED FROM GITHUB`}
       </div>
 
-      {(issueState.status === 'error' || issueState.status === 'rate-limited') && issueState.quests.length === 0 ? (
-        <a className="fallback-link" href={ISSUES_PAGE_URL} target="_blank" rel="noreferrer noopener">VIEW QUESTS ON GITHUB ↗</a>
-      ) : issueState.quests.length > 0 ? (
-        <div className={`quest-workspace ${selected ? 'has-detail' : ''}`}>
-          <section className="quest-list" aria-labelledby="quest-list-heading">
-            <div className="pane-heading"><h3 id="quest-list-heading">QUEST LOG</h3><span>MAX 100</span></div>
-            <div className="quest-list-items">
-              {issueState.quests.map(quest => (
+      {(issueState.status === 'error' || issueState.status === 'rate-limited') && issueState.projects.length === 0 ? (
+        <a className="fallback-link" href={ISSUES_PAGE_URL} target="_blank" rel="noreferrer noopener">VIEW ISSUES ON GITHUB ↗</a>
+      ) : issueState.projects.length > 0 ? (
+        <div className={`project-workspace ${selected ? 'has-detail' : ''}`}>
+          <section className="project-list" aria-labelledby="project-list-heading">
+            <div className="pane-heading"><h3 id="project-list-heading">GITHUB ISSUES</h3><span>MAX 100</span></div>
+            <div className="project-list-items">
+              {issueState.projects.map(project => (
                 <button
-                  key={quest.id}
+                  key={project.id}
                   type="button"
-                  className={selectedId === quest.id ? 'selected' : ''}
-                  aria-pressed={selectedId === quest.id}
-                  onClick={() => setSelectedId(quest.id)}
+                  className={selectedId === project.id ? 'selected' : ''}
+                  aria-pressed={selectedId === project.id}
+                  onClick={() => setSelectedId(project.id)}
                 >
-                  <span className="quest-number">#{String(quest.id).padStart(3, '0')}</span>
-                  <strong>{quest.title}</strong>
-                  <span className={`quest-state state-${quest.status.toLowerCase()}`}>{quest.status}</span>
+                  <span className="project-number">#{String(project.id).padStart(3, '0')}</span>
+                  <strong>{project.title}</strong>
+                  <span className={`project-state state-${project.status.toLowerCase()}`}>{project.status}</span>
                 </button>
               ))}
             </div>
           </section>
-          {selected ? <QuestDetails quest={selected} onClose={() => setSelectedId(null)} /> : <div className="no-selection">SELECT A QUEST FOR DETAILS</div>}
+          {selected ? <ProjectDetails project={selected} onClose={() => setSelectedId(null)} /> : <div className="no-selection">SELECT AN ISSUE FOR DETAILS</div>}
         </div>
       ) : null}
     </div>

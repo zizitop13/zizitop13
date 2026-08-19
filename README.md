@@ -17,3 +17,5 @@ You can click the Preview link to take a look at your changes.
 ## Portfolio site
 
 https://zizitop13.github.io/zizitop13/
+
+The portfolio uses a minimal console-style interface with keyboard navigation. Use the left and right arrow keys, Home/End, or number keys 1–4 to switch sections.

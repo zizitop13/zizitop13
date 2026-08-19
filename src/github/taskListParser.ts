@@ -1,8 +1,8 @@
-import type { QuestObjective } from './githubTypes'
+import type { ProjectTask } from './githubTypes'
 
 const TASK_ITEM = /^\s*[-*+]\s+\[([ xX])\]\s+(.+?)\s*$/gm
 
-export function parseTaskList(body: string | null): QuestObjective[] {
+export function parseTaskList(body: string | null): ProjectTask[] {
   if (!body) return []
 
   return Array.from(body.matchAll(TASK_ITEM), match => ({
@@ -12,12 +12,12 @@ export function parseTaskList(body: string | null): QuestObjective[] {
 }
 
 export function calculateProgress(
-  objectives: QuestObjective[],
+  tasks: ProjectTask[],
   issueState: 'open' | 'closed',
 ): number | null {
   if (issueState === 'closed') return 100
-  if (objectives.length === 0) return null
+  if (tasks.length === 0) return null
 
-  const completed = objectives.filter(objective => objective.completed).length
-  return Math.round((completed / objectives.length) * 100)
+  const completed = tasks.filter(task => task.completed).length
+  return Math.round((completed / tasks.length) * 100)
 }

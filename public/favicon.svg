@@ -1,15 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Green histogram">
-  <defs>
-    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-      <path d="M0 3.5h4" stroke="#9ccc8c" stroke-opacity=".035"/>
-    </pattern>
-  </defs>
-  <rect width="64" height="64" rx="10" fill="#07110b"/>
-  <rect width="64" height="64" rx="10" fill="url(#scanlines)"/>
-  <g>
-    <rect x="9" y="29" width="9" height="26" fill="#3e5b42"/>
-    <rect x="21" y="18" width="9" height="37" fill="#6f9473"/>
-    <rect x="33" y="10" width="9" height="45" fill="#b9e1aa"/>
-    <rect x="45" y="23" width="9" height="32" fill="#49684d"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Console prompt">
+  <rect x="3" y="5" width="58" height="54" rx="8" fill="#080808" stroke="#777" stroke-width="2"/>
+  <path d="M4 17h56" stroke="#292929" stroke-width="2"/>
+  <circle cx="11" cy="11" r="1.5" fill="#777"/>
+  <circle cx="17" cy="11" r="1.5" fill="#555"/>
+  <circle cx="23" cy="11" r="1.5" fill="#3b3b3b"/>
+  <path d="m17 29 9 7-9 7" fill="none" stroke="#f2f2f2" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M32 44h15" stroke="#c8c8c8" stroke-width="4"/>
 </svg>

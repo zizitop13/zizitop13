@@ -40,7 +40,7 @@ export function SkillsPanel() {
   return (
     <div className="skills-layout">
       <section className="selector-list" aria-labelledby="skills-heading">
-        <p className="section-code">CAPABILITY INDEX / {String(selected + 1).padStart(2, '0')}</p>
+        <p className="section-code">~/skills/{String(selected + 1).padStart(2, '0')}</p>
         <h2 id="skills-heading">SKILLS</h2>
         <div className="category-list">
           {skillGroups.map((item, index) => (
@@ -61,7 +61,7 @@ export function SkillsPanel() {
       <section className="skill-detail" aria-live="polite" aria-labelledby="skill-group-heading">
         <header>
           <div>
-            <p className="section-code">PROFICIENCY / VERIFIED</p>
+            <p className="section-code">skill-group.json</p>
             <h3 id="skill-group-heading">{group.name}</h3>
           </div>
           <strong className={`level level-${group.level.toLowerCase()}`}>{group.level}</strong>

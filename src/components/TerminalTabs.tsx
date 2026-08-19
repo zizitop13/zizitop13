@@ -1,6 +1,6 @@
 import type { KeyboardEvent, RefObject } from 'react'
 
-export const tabs = ['STATUS', 'SKILLS', 'QUESTS', 'LINKS'] as const
+export const tabs = ['STATUS', 'SKILLS', 'PROJECTS', 'LINKS'] as const
 export type TabName = typeof tabs[number]
 
 interface TerminalTabsProps {
@@ -24,7 +24,7 @@ export function TerminalTabs({ activeIndex, onSelect, tabRefs }: TerminalTabsPro
 
   return (
     <nav className="terminal-tabs" aria-label="Portfolio sections">
-      <div role="tablist" aria-label="Engineering terminal">
+      <div role="tablist" aria-label="Portfolio sections">
         {tabs.map((tab, index) => (
           <button
             key={tab}

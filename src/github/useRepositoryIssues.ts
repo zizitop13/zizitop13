@@ -1,17 +1,17 @@
 import { useEffect, useMemo, useState } from 'react'
 import { fetchIssuesOnce, GitHubRequestError, isFresh, readIssueCache } from './githubClient'
-import { mapIssuesToQuests } from './issueMapper'
+import { mapIssuesToProjects } from './issueMapper'
 import type { IssueLoadState } from './githubTypes'
 
 export function useRepositoryIssues(): IssueLoadState {
   const initialCache = useMemo(readIssueCache, [])
   const [state, setState] = useState<IssueLoadState>(() => {
-    if (!initialCache) return { status: 'loading', source: null, quests: [], refreshing: false }
-    const quests = mapIssuesToQuests(initialCache.data)
+    if (!initialCache) return { status: 'loading', source: null, projects: [], refreshing: false }
+    const projects = mapIssuesToProjects(initialCache.data)
     return {
-      status: quests.length ? 'success' : 'empty',
+      status: projects.length ? 'success' : 'empty',
       source: isFresh(initialCache) ? 'cache' : 'stale-cache',
-      quests,
+      projects,
       refreshing: true,
     }
   })
@@ -22,21 +22,21 @@ export function useRepositoryIssues(): IssueLoadState {
     fetchIssuesOnce(initialCache)
       .then(cache => {
         if (!active) return
-        const quests = mapIssuesToQuests(cache.data)
+        const projects = mapIssuesToProjects(cache.data)
         setState({
-          status: quests.length ? 'success' : 'empty',
+          status: projects.length ? 'success' : 'empty',
           source: initialCache && cache.fetchedAt === initialCache.fetchedAt ? 'cache' : 'network',
-          quests,
+          projects,
           refreshing: false,
         })
       })
       .catch(error => {
         if (!active) return
-        const cachedQuests = initialCache ? mapIssuesToQuests(initialCache.data) : []
+        const cachedProjects = initialCache ? mapIssuesToProjects(initialCache.data) : []
         setState({
           status: error instanceof GitHubRequestError && error.kind === 'rate-limited' ? 'rate-limited' : 'error',
-          source: cachedQuests.length ? 'stale-cache' : null,
-          quests: cachedQuests,
+          source: cachedProjects.length ? 'stale-cache' : null,
+          projects: cachedProjects,
           refreshing: false,
         })
       })

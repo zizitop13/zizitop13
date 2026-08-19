@@ -14,19 +14,19 @@ export interface GitHubIssue {
   pull_request?: unknown
 }
 
-export interface QuestObjective {
+export interface ProjectTask {
   text: string
   completed: boolean
 }
 
-export interface Quest {
+export interface ProjectIssue {
   id: number
   title: string
   description: string
   status: 'ACTIVE' | 'COMPLETED' | 'BLOCKED'
-  kind: 'MAIN QUEST' | 'SIDE QUEST'
+  kind: 'FEATURE' | 'TASK'
   categories: string[]
-  objectives: QuestObjective[]
+  tasks: ProjectTask[]
   progress: number | null
   url: string
   createdAt: string
@@ -39,6 +39,6 @@ export type IssueDataSource = 'network' | 'cache' | 'stale-cache' | null
 export interface IssueLoadState {
   status: IssueLoadStatus
   source: IssueDataSource
-  quests: Quest[]
+  projects: ProjectIssue[]
   refreshing: boolean
 }
