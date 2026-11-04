@@ -3,6 +3,7 @@ import { ISSUES_PAGE_URL } from '../github/githubClient'
 import type { ProjectIssue } from '../github/githubTypes'
 import { useRepositoryIssues } from '../github/useRepositoryIssues'
 import { publicLinks } from '../portfolioData'
+import { CopyLinkButton } from './CopyLinkButton'
 
 function formatDate(value: string) {
   return new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(value)).toUpperCase()
@@ -52,7 +53,10 @@ function ProjectDetails({ project, onClose }: { project: ProjectIssue, onClose: 
       )}
       <footer>
         <span>CREATED {formatDate(project.createdAt)} / UPDATED {formatDate(project.updatedAt)}</span>
-        <a href={project.url} target="_blank" rel="noreferrer noopener">OPEN ON GITHUB ↗</a>
+        <div className="project-link-actions">
+          <a href={project.url} target="_blank" rel="noreferrer noopener">OPEN ON GITHUB ↗</a>
+          <CopyLinkButton url={project.url} label={`issue #${project.id}`} />
+        </div>
       </footer>
     </article>
   )
@@ -78,7 +82,10 @@ export function ProjectsPanel() {
         </div>
         <span className="project-signal"><span className="indicator" aria-hidden="true" />PROJECT ACTIVE</span>
         <p>Open-source GraphQL Federation gateway with authentication, role-based access control, service discovery and cloud-native deployment support.</p>
-        <a href={publicLinks.helios} target="_blank" rel="noreferrer noopener">REPOSITORY ↗</a>
+        <div className="project-actions">
+          <a href={publicLinks.helios} target="_blank" rel="noreferrer noopener">REPOSITORY ↗</a>
+          <CopyLinkButton url={publicLinks.helios} label="Helios Gateway repository" />
+        </div>
       </header>
 
       <div className="sync-message" aria-live="polite">

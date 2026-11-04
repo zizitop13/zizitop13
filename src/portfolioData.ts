@@ -1,4 +1,5 @@
 export const publicLinks = {
+  portfolio: 'https://zizitop13.github.io/zizitop13/',
   github: 'https://github.com/zizitop13',
   linkedin: 'https://www.linkedin.com/in/maksim-ziniakov-6005a124b',
   helios: 'https://github.com/zizitop13/helios-gateway',

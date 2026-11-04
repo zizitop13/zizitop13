@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import type { KeyboardEvent } from 'react'
 import { publicLinks } from '../portfolioData'
+import { CopyLinkButton } from './CopyLinkButton'
 
 const links = [
+  ['PORTFOLIO', publicLinks.portfolio],
   ['GITHUB', publicLinks.github],
   ['LINKEDIN', publicLinks.linkedin],
   ['HELIOS GATEWAY', publicLinks.helios],
@@ -53,20 +55,23 @@ export function LinksPanel() {
       <h2 id="links-heading">LINKS</h2>
       <ul>
         {links.map(([label, url], index) => (
-          <li key={label} className={selected === index ? 'selected' : ''}>
+          <li key={label} className={selected === index ? 'selected' : ''} onFocusCapture={() => setSelected(index)}>
             <span className="link-index">{String(index + 1).padStart(2, '0')}</span>
-            <div><strong>{label}</strong><span>{url}</span></div>
-            <a
-              ref={node => { linkRefs.current[index] = node }}
-              href={url}
-              target="_blank"
-              rel="noreferrer noopener"
-              onFocus={() => setSelected(index)}
-              onMouseEnter={() => setSelected(index)}
-              onKeyDown={event => navigateFromLink(event, index)}
-            >
-              OPEN <span aria-hidden="true">↗</span>
-            </a>
+            <div className="link-metadata"><strong>{label}</strong><span>{url}</span></div>
+            <div className="link-actions">
+              <a
+                ref={node => { linkRefs.current[index] = node }}
+                href={url}
+                target="_blank"
+                rel="noreferrer noopener"
+                onFocus={() => setSelected(index)}
+                onMouseEnter={() => setSelected(index)}
+                onKeyDown={event => navigateFromLink(event, index)}
+              >
+                OPEN <span aria-hidden="true">↗</span>
+              </a>
+              <CopyLinkButton url={url} label={label} />
+            </div>
           </li>
         ))}
       </ul>
