@@ -57,7 +57,7 @@ export function LinksPanel() {
         {links.map(([label, url], index) => (
           <li key={label} className={selected === index ? 'selected' : ''} onFocusCapture={() => setSelected(index)}>
             <span className="link-index">{String(index + 1).padStart(2, '0')}</span>
-            <div><strong>{label}</strong><span>{url}</span></div>
+            <div className="link-metadata"><strong>{label}</strong><span>{url}</span></div>
             <div className="link-actions">
               <a
                 ref={node => { linkRefs.current[index] = node }}
