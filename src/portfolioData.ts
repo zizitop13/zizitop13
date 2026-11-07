@@ -4,6 +4,7 @@ export const publicLinks = {
   linkedin: 'https://www.linkedin.com/in/maksim-ziniakov-6005a124b',
   helios: 'https://github.com/zizitop13/helios-gateway',
   mockInterviewClub: 'https://zizitop13.github.io/mock-interview-club-public/',
+  upcomingItEvents: 'https://zizitop13.github.io/upcoming-IT-events/',
 } as const
 
 export const skillGroups = [
