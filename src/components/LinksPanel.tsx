@@ -9,6 +9,7 @@ const links = [
   ['LINKEDIN', publicLinks.linkedin],
   ['HELIOS GATEWAY', publicLinks.helios],
   ['MOCK INTERVIEW CLUB', publicLinks.mockInterviewClub],
+  ['UPCOMING IT EVENTS', publicLinks.upcomingItEvents],
 ] as const
 
 export function LinksPanel() {
